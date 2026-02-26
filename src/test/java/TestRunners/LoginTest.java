@@ -31,6 +31,8 @@ public class LoginTest extends BaseTest {
                 {"ndivhuwo.tshiedza@gmail.com", "P@ssword"}
         };
     }
+
+    @DataProvider
     public Object[][] invalidCred() {
         return new Object[][]{
                 {"testuser@gmail.com", "WrongPassword"}
