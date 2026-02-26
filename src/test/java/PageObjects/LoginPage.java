@@ -49,4 +49,11 @@ public class LoginPage {
         wait.until(ExpectedConditions.elementToBeClickable(loginSubmitButton));
         loginSubmitButton.click();
     }
+
+    public void alertMessage(String expectedMessage){
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = driver.switchTo().alert().getText();
+        assert alertText.equals(expectedMessage) : "Expected alert message: " + expectedMessage + ", but got: " + alertText;
+        driver.switchTo().alert().accept();
+    }
 }
